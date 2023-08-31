@@ -23,3 +23,11 @@ def update_data(request):
         return JsonResponse(response_data)
     else:
         return JsonResponse({'error': 'Invalid request method'})    
+    
+def index(request):
+    # sensor_data = SensorData.objects.all().first()
+    # temperature = sensor_data.temperature
+    # humidity = sensor_data.humidity
+    temperature = 1
+    humidity = 2
+    return JsonResponse({'temperature': temperature, 'humidity': humidity})
