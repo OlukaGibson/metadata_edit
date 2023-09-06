@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.http import JsonResponse
 
 class UpdateSensorDataView(APIView):
     def get(self, request, *args, **kwargs):
@@ -17,7 +18,7 @@ class UpdateSensorDataView(APIView):
             'updated_temperature': updated_temperature,
             'updated_humidity': updated_humidity
         }
-        return Response(response_data)
+        return JsonResponse(response_data)
 
 
 # from django.http import JsonResponse
