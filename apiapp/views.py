@@ -18,7 +18,7 @@ class UpdateSensorDataView(APIView):
             'updated_temperature': updated_temperature,
             'updated_humidity': updated_humidity
         }
-        return 5555
+        return Response(response_data)
 
 
 # from django.http import JsonResponse
