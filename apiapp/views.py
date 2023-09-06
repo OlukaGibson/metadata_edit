@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def update_data(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
         temperature = request.POST.get('temperature')
         humidity = request.POST.get('humidity')
         
