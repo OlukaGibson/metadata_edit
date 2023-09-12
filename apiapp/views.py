@@ -5,17 +5,17 @@ from django.http import JsonResponse
 class UpdateSensorDataView(APIView):
     def get(self, request, *args, **kwargs):
         try:
-            temperature = float(request.query_params.get('temperature'))
+            #temperature = float(request.query_params.get('temperature'))
             humidity = float(request.query_params.get('humidity'))
         except (ValueError, TypeError):
             return Response({'error': 'Invalid input data'}, status=400)
 
-        updated_temperature = temperature + 1.2
+        #updated_temperature = temperature + 1.2
         updated_humidity = humidity + 1.2
 
         response_data = {
             'message': 'Data updated successfully',
-            'updated_temperature': updated_temperature,
+            #'updated_temperature': updated_temperature,
             'updated_humidity': updated_humidity
         }
         return JsonResponse(response_data)
